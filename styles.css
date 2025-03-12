@@ -1,0 +1,163 @@
+/* 全局样式 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 页头样式 */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 28px;
+}
+
+header p {
+    color: #7f8c8d;
+    font-size: 16px;
+}
+
+/* 时间周期选择器样式 */
+.timeframe-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.timeframe-selector span {
+    font-weight: 500;
+    color: #2c3e50;
+}
+
+.timeframe-selector button {
+    padding: 8px 16px;
+    border: 1px solid #dcdfe6;
+    background-color: #fff;
+    color: #606266;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.25s ease;
+    font-size: 14px;
+}
+
+.timeframe-selector button:hover {
+    background-color: #f0f2f5;
+}
+
+.timeframe-selector button.active {
+    background-color: #409eff;
+    color: white;
+    border-color: #409eff;
+}
+
+/* 加载和错误提示样式 */
+.loading, .error {
+    text-align: center;
+    padding: 30px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+.loading {
+    background-color: #ecf5ff;
+    color: #409eff;
+    display: none;
+}
+
+.error {
+    background-color: #fef0f0;
+    color: #f56c6c;
+    margin-bottom: 20px;
+    display: none;
+}
+
+/* 图表容器样式 */
+.charts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.chart-wrapper {
+    border: 1px solid #e4e7ed;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+.chart-wrapper h2 {
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.chart {
+    height: 400px;
+    width: 100%;
+}
+
+/* D3图表样式 */
+.line {
+    fill: none;
+    stroke-width: 2;
+}
+
+.gld-line {
+    stroke: #FFD700;
+}
+
+.ibit-line {
+    stroke: #F7931A;
+}
+
+.axis-title {
+    font-size: 12px;
+    text-anchor: middle;
+}
+
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 4px;
+    padding: 8px;
+    font-size: 12px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+/* 响应式布局 */
+@media (min-width: 768px) {
+    .charts-container {
+        flex-direction: row;
+    }
+    
+    .chart-wrapper {
+        flex: 1;
+    }
+}
