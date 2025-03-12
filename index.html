@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold ETF vs Bitcoin ETF 对比分析</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>黄金ETF与比特币ETF表现对比</h1>
+            <p>比较GLD(从2004年开始)与IBIT(从2024年开始)的价格走势</p>
+        </header>
+        
+        <!-- 时间周期选择器 -->
+        <div class="timeframe-selector">
+            <span>选择时间周期: </span>
+            <button class="active" data-timeframe="daily">日线</button>
+            <button data-timeframe="weekly">周线</button>
+            <button data-timeframe="monthly">月线</button>
+            <button data-timeframe="quarterly">季度</button>
+            <button data-timeframe="yearly">年线</button>
+        </div>
+        
+        <!-- 加载状态指示器 -->
+        <div id="loadingIndicator" class="loading">加载ETF数据中...</div>
+        
+        <!-- 错误提示 -->
+        <div id="errorMessage" class="error"></div>
+        
+        <!-- 图表容器 -->
+        <div class="charts-container">
+            <div class="chart-wrapper">
+                <h2>GLD 表现 (黄金ETF)</h2>
+                <div id="gldChart" class="chart"></div>
+            </div>
+            
+            <div class="chart-wrapper">
+                <h2>IBIT 表现 (比特币ETF)</h2>
+                <div id="ibitChart" class="chart"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 引入第三方库 -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-array@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-scale@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-shape@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-axis@3"></script>
+    
+    <!-- 引入应用程序脚本 -->
+    <script src="script.js"></script>
+</body>
+</html>
